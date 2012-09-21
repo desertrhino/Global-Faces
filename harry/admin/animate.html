@@ -1,0 +1,53 @@
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+	$("#run").click(function (){
+		//$("#unfold").toggleClass('active nonactive');
+		$(".out1").animate({"top" : "63px"}, 1500);
+	});
+ }); 
+</script>
+<style> 
+<!--
+/* FOLD-OUT */
+#unfold { width: 107px; height: 127px; padding:0; margin:0; position:relative; }
+#unfold .box { position: absolute; width: 107px; height: 63px; overflow: hidden; -webkit-transform: rotateX(0); }
+
+#unfold .outgoing { -webkit-transform-origin: 0% 100%; -webkit-animation-duration: 1s;}
+
+#unfold .outgoing.out1 {}
+
+#unfold .outgoing.out2 { top: 63px; height: 64px;}
+#unfold .outgoing.out2 img { position: absolute; top: -63px; }
+
+#unfold .incoming {-webkit-transform-origin: 0% 100%; -webkit-animation-duration: 1s;}
+#unfold .incoming.in1 { top: 0; height:63px; }
+#unfold .incoming.in1 img { top: 0; }
+#unfold .incoming.in2 { top: 63px; height: 64px; }
+#unfold .incoming.in2 img {  position: absolute; top: -63px; }
+
+#unfold.active .outgoing.out1 { -webkit-animation-name: unfoldout1; }
+#unfold.active .incoming.in2 { -webkit-animation-name: unfoldout2; }
+
+@-webkit-keyframes unfoldout1 {
+    0%   { opacity: 1; -webkit-transform: rotateX(0); }
+    30%  { opacity: 1; -webkit-transform: rotateX(90deg); }
+    32%  { opacity: 0; -webkit-transform: rotateX(90deg); }
+    100%  { opacity: 0; -webkit-transform: rotateX(90deg); }
+}
+@-webkit-keyframes unfoldout2 {
+    0%   { opacity: 0; -webkit-transform: rotateX(180deg); top:0;}
+    30%  { opacity: 1; -webkit-transform: rotateX(180deg);top:0;}
+    100%  { opacity: 1; -webkit-transform: rotateX(0);}
+}
+
+-->
+</style>
+
+<div id="unfold" class="demo nonactive stopped">
+	<div class="box incoming in2"><img src="faces/thumbs/face_0001.jpg" width="107" height="127" /></div>
+	<div class="box incoming in1"><img src="faces/thumbs/face_0001.jpg" width="107" height="127" /></div>
+	<div class="box outgoing out2"><img src="faces/thumbs/face_0000.jpg" width="107" height="127" /></div>
+	<div class="box outgoing out1"><img src="faces/thumbs/face_0000.jpg" width="107" height="127" /></div>
+</div>
+<button name="run" id="run">run</button>

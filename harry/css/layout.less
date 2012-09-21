@@ -1,0 +1,137 @@
+@background: #000;
+@colourLight: #3A4545;
+@colourMid: #4E4943;
+@colourDark: rgba(0, 0, 0, .8);
+@colourLink: #284748;
+@colourWhite: #FFF;
+html{
+	height:100%;
+}
+body{
+	background:@background;
+	margin:0; padding:0;
+	width:100%;
+	height:100%;
+}
+#Container{
+	position:relative;
+	min-height:100%;
+}
+#Mask {
+	position:fixed;
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	cursor:pointer;
+	display:none;
+	background: @colourDark;
+	z-index:800
+}
+#Loading {
+	position:fixed;
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	background: @colourDark url('../layout/loading.gif') 50% 50% no-repeat;
+}
+#Menu{
+	width: 100%;
+	background:@colourDark;
+    position: absolute;
+    z-index: 999;
+}
+#MenuTab {
+	height:30px;
+}
+#MenuTab a {
+	text-decoration: none;
+	font-size:24px; 
+	font-weight:normal;
+	color: @colourLink;
+	display: block;
+	padding:3px 5px;
+	border-radius:0 0 10px 10px;
+}
+#MenuPanel {
+	height: 105px;
+	padding:20px 14px 0;
+	z-index: 3;
+	display: none;
+    z-index: 99;
+}
+#MenuSpacer{
+	height:30px;
+}
+#Photos{
+	display:none;
+}
+#PhotosList{
+	margin:0 auto;
+}
+#Photos ul {
+	list-style:none;
+	margin:0 auto;padding:0;
+}
+#Photos li {
+	list-style:none;
+	float:left;
+	padding:0; margin:0;
+	overflow:hidden;
+	width:106px;
+	height:127px;
+}
+#Photos li img{
+	border:none;
+	padding:0; margin:0;
+}
+#Photos .show{
+	position:fixed;
+	z-index:1050;
+}
+.lazy {
+	display: none;
+}
+.form{
+	display:none;
+	width: 550px;
+	height:300px;
+	padding:0;
+	position:fixed;
+	left:50%;
+	top:50%;
+	margin-left:-250px;
+	margin-top:-150px;
+	background: @colourWhite url('../layout/sliders.jpg') 100% 0 no-repeat;
+	border: 1px solid @colourLight;
+	z-index:1000;
+}
+.form img{
+	float:left;
+}
+.closeForm{
+	float: right;
+	top:5px;
+	right: 5px;
+	width:20px;
+	height:20px;
+	background: url('../layout/close.png');
+	display:block;
+	cursor:pointer;
+}
+#Footer{
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+#FooterTab{
+	height:10px;
+	display: block;
+	background:@colourDark;
+}
+#FooterPanel {
+	height: 105px;
+	padding:20px 14px 0;
+	background: @colourDark;
+	display: none;
+    z-index: 999;
+}
